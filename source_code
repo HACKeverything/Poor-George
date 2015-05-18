@@ -1,0 +1,31 @@
+            int target, min, max, temp=0;
+            Random rand = new Random();
+
+            target = rand.Next(99) + 1;
+            min = 1;
+            max = 100;
+
+            while (temp != target)
+            {
+                Console.Write("\nplease suggest a number between {0:000} ~ {1:000}\n", min, max);
+                temp = Convert.ToInt32(Console.ReadLine());
+                if (temp <= max && temp >= min)
+                {
+                    if (temp > target)
+                    {
+                        max = temp-1;
+                    }
+                    else
+                    {
+                        min = temp+1;
+                    }
+                }
+                else
+                {
+                    Console.Write("\n{0:000} ~ {1:000} does not include the number greater than {0:000} or less than {1:000}\nTRY AGAIN", min, max);
+                }
+            }
+
+            Console.Write("\nFINISH");
+            
+            Console.Read();
